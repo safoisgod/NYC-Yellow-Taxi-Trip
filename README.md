@@ -35,11 +35,11 @@ pip install pandas matplotlib seaborn numpy pyarrow
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/safoisgod/NYC-Yellow-Taxi-Trip.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd your-repository
+   cd NYC-Yellow-Taxi-Trip
    ```
 3. Open the Jupyter notebook:
    ```bash
@@ -69,4 +69,4 @@ Potential enhancements:
 
 ## Contact
 
-For questions or suggestions, contact me at [your email or GitHub username].
+For questions or suggestions, contact me at iamnanasafo@gmail.com.
