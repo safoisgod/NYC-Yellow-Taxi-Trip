@@ -1,92 +1,72 @@
-# 🗽 NYC Yellow Taxi Trip Data - Analytics Project Guide
+# Yellow Taxi Trip Analysis (Jan 2025)
 
-## 📁 Dataset Info
-- **Source:** [NYC TLC Trip Records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
-- **Format:** Parquet
-- **Dataset:** `yellow_tripdata_YYYY-MM.parquet`
-- **Optional Lookup:** `taxi+_zone_lookup.csv` (maps LocationID to Zone/Borough)
+This project analyzes NYC Yellow Taxi Trip data for January 2025, sourced from the NYC Taxi and Limousine Commission (TLC). The analysis explores trip details such as pickup and dropoff times, distances, fares, passenger behavior, payment methods, and location zones.
 
----
+## Dataset
 
-## 🛠 Tools
-- Python (Pandas, Seaborn, Matplotlib)
-- SQL (DuckDB or SQLite)
-- Jupyter Notebook / VS Code
+The dataset is the Yellow Taxi Trip Records for January 2025, provided by the NYC TLC. For more information about the data and its columns, visit the [NYC TLC Trip Record Data page](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml). A detailed description of the columns is available in the data dictionary PDF included in the repository (`data_dictionary_trip_records_yellow.pdf`).
 
----
+## Notebook Overview
 
-## 📌 Project Objectives
+The Jupyter notebook `yellow_taxi_analysis.ipynb` includes the following steps:
 
-### 1. 📆 Time-Based Trip Analysis
-- Trip count by:
-  - Day of week
-  - Hour of day
-- Peak vs. off-peak trend analysis
-- Heatmap: Hour vs. Weekday trip volume
+- **Data Loading and Initial Preview:** Loads the dataset and displays initial rows.
+- **Data Inspection:** Examines column types and counts.
+- **Data Cleaning:** Addresses missing values, duplicates, negative values, zero values, and outliers.
+- **Feature Engineering:** Adds features like trip duration, day of the week, hour of the day, and average speed.
+- **Location Zone Analysis:** Maps pickup and dropoff IDs to boroughs/zones and identifies hotspots.
+- **Exploratory Data Analysis (EDA):** Conducts statistical summaries, time-based analysis, revenue analysis, passenger behavior, payment type analysis, tip analysis, and trip characteristics.
 
-### 2. 💰 Revenue Analysis
-- Total fare & tip per day
-- Average fare per mile
-- Revenue by hour
+## Requirements
 
-### 3. 👥 Passenger Behavior
-- Most common passenger counts
-- Avg. trip distance per passenger group
-- Compare short vs long trip frequencies
+To run the notebook, you need:
 
-### 4. 📍 Pickup & Dropoff Zones
-- Join with `taxi+_zone_lookup.csv`
-- Top 10 pickup zones by volume
-- Dropoff hotspots
-- Borough-level pickup distribution
+- Python 3.x
+- Jupyter Notebook
+- Libraries: `pandas`, `matplotlib`, `seaborn`, `numpy`, `pyarrow`
 
-### 5. ⏱ Trip Duration & Speed
-- Calculate trip time from timestamps
-- Estimate average speed: `distance / duration`
-- Identify outliers (very long or very short trips)
+Install the required libraries with:
 
-### 6. 💳 Payment Types
-- Payment method distribution
-- Tip amounts by payment method
-- Avg. total per type
+```bash
+pip install pandas matplotlib seaborn numpy pyarrow
+```
 
----
+## Usage
 
-## 🔍 Bonus Ideas (Optional)
-- Combine multiple months for trend analysis
-- Compare Yellow vs Green taxi patterns
-- Visualize zone-to-zone trip matrix
-- Integrate weather or event data for deeper insight
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repository.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd your-repository
+   ```
+3. Open the Jupyter notebook:
+   ```bash
+   jupyter notebook yellow_taxi_analysis.ipynb
+   ```
+4. Run the cells in the notebook to perform the analysis.
 
----
+## Results and Findings
 
-## 📊 Suggested Visuals
-- Countplots (hour, day)
-- Line plots (revenue trends)
-- Heatmaps (day/hour, pickup frequency)
-- Boxplots (fare, tips by category)
-- Geo heatmaps (if using location zones)
+Key insights from the analysis include:
 
----
+- Peak trip hours occur during evening rush hour.
+- Manhattan dominates as the top pickup area, especially near tourist and business districts.
+- Credit card payments are prevalent and correlate with higher average tips.
 
-## 📝 Reporting Suggestions
-- Clean layout with sectioned insights
-- Visuals with brief interpretations
-- Wrap-up with findings & business implications
-- Export to PDF or share notebook for portfolio
+Refer to the notebook for detailed findings.
 
----
+## Future Work
 
-## 📦 Starter Code Snippets
+Potential enhancements:
 
-```python
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
+- Summarize business implications (e.g., resource allocation, pricing strategies).
+- Analyze multiple months for seasonal trends.
+- Compare with Green Taxi data.
+- Create geo heatmaps for trip density.
+- Integrate weather or event data for demand insights.
 
-# Load dataset
-df = pd.read_parquet('yellow_tripdata_2024-05.parquet')
+## Contact
 
-# Basic summary
-df.info()
-df.describe()
+For questions or suggestions, contact me at [your email or GitHub username].
